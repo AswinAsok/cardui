@@ -4,13 +4,27 @@
             <img src="/lessen.jpg" alt="" class="cardImage" />
         </div>
         <div class="cardTexts">
-            <p class="mountainText">Mountain</p>
+            <div class="mountainHeadingTexts">
+                <p class="mountainText">Mountain</p>
+                <div class="loveCircle">
+                    <font-awesome-icon
+                        :icon="['far', 'heart']"
+                        style="color: #f04343"
+                    />
+                </div>
+            </div>
             <p class="cardHeading">{{ mountain }}</p>
             <p class="cardContent">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Voluptas, hic? Suscipit possimus. distinctio?
             </p>
-            <p class="readMore">Read More</p>
+            <p class="readMore">
+                Read More
+                <font-awesome-icon
+                    :icon="['fas', 'arrow-right']"
+                    style="color: #5f62f1"
+                />
+            </p>
         </div>
     </div>
 </template>
@@ -27,6 +41,27 @@ export default {
 </script>
 
 <style scoped>
+.mountainHeadingTexts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+
+.loveCircle {
+    -webkit-box-shadow: 0px 0px 15px -8px rgba(0, 0, 0, 0.91);
+    -moz-box-shadow: 0px 0px 15px -8px rgba(0, 0, 0, 0.91);
+    box-shadow: 0px 0px 15px -8px rgba(0, 0, 0, 0.91);
+
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+}
 .cardContainer {
     display: flex;
     flex-direction: row;
@@ -82,6 +117,8 @@ export default {
     margin-top: 1rem;
     text-align: right;
     margin-right: 2rem;
+    color: #5f62f1;
+    font-weight: 600;
 }
 
 .icon {
