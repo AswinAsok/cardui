@@ -35,6 +35,7 @@ export default {
 
 <style scoped>
 .backgroundContainer {
+  padding: 0 2rem;
     max-width: 100vw;
     min-height: 100vh;
     display: flex;

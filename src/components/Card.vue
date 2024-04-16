@@ -45,7 +45,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 2rem;
+    padding-right: 1rem;
 }
 
 .loveCircle {
@@ -65,14 +65,24 @@ export default {
 .cardContainer {
     display: flex;
     flex-direction: row;
-    column-gap: 1rem;
+    flex-wrap: wrap;
+
     align-items: center;
+
+    max-width: fit-content;
+    width: 100%;
 
     -webkit-box-shadow: -1px 10px 18px 1px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: -1px 10px 18px 1px rgba(0, 0, 0, 0.22);
     box-shadow: -1px 10px 18px 1px rgba(0, 0, 0, 0.22);
 
     border-radius: 15px;
+}
+
+@media (max-width: 792px) {
+    .cardContainer {
+        display: block;
+    }
 }
 
 .imageContainer {
@@ -88,7 +98,14 @@ export default {
     border-radius: 15px;
 }
 
+@media (max-width: 792px) {
+    .cardImage {
+        width: 100%;
+    }
+}
+
 .cardTexts {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
@@ -116,7 +133,7 @@ export default {
 .readMore {
     margin-top: 1rem;
     text-align: right;
-    margin-right: 2rem;
+    margin-right: 1rem;
     color: #5f62f1;
     font-weight: 600;
 }
