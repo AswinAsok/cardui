@@ -12,6 +12,12 @@ export default {
     components: {
         Card,
     },
+    props: {
+        mountain: {
+            type: String,
+            required: true,
+        },
+    },
     methods: {
         updateMountain(mountain) {
             currentMountain.value = mountain;
@@ -22,7 +28,7 @@ export default {
 
 <template>
     <div class="backgroundContainer">
-        <Switch :customFunction="updateMountain" />
+        <Switch :customFunction="updateMountain" :mountain="currentMountain"/>
         <Card :mountain="currentMountain" />
     </div>
 </template>

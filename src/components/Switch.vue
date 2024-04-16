@@ -5,6 +5,10 @@ export default {
             type: Function,
             required: true,
         },
+        mountain: {
+            type: String,
+            required: true,
+        },
     },
     methods: {
         handleClick(mountain) {
@@ -17,13 +21,25 @@ export default {
 
 <template>
     <div class="switchContainer">
-        <div @click="handleClick('Lessen Peak')" class="switch">
+        <div
+            :class="{ active: mountain === 'Lessen Peak' }"
+            @click="handleClick('Lessen Peak')"
+            class="switch"
+        >
             Lessen Peak
         </div>
-        <div @click="handleClick('Mount Shasta')" class="switch">
+        <div
+            :class="{ active: mountain === 'Mount Shasta' }"
+            @click="handleClick('Mount Shasta')"
+            class="switch"
+        >
             Mount Shasta
         </div>
-        <div @click="handleClick('Eureka Peak')" class="switch">
+        <div
+            :class="{ active: mountain === 'Eureka Peak' }"
+            @click="handleClick('Eureka Peak')"
+            class="switch"
+        >
             Eureka Peak
         </div>
     </div>
@@ -40,11 +56,16 @@ export default {
     margin-bottom: 2rem;
 }
 
+.active {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 .switch {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
     border-radius: 15px;
-    background-color: #ffffff;
+
     color: #000000;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
